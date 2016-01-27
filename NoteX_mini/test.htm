@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <title>NoteX mini</title></head>
+<style>.title1{resize: none}</style>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="popup.js"></script>
+
+
+
+<body >
+
+<form
+        id = "form1"
+        name = "form1"
+        method = "post"
+        action = "http://localhost/NoteX_mini/db.php" >
+  <!--form id="myForm">-->
+  <div id = "wrapper" >
+
+
+
+    <div id = "margin" >
+      <input type="checkbox"  value="" id="keepSub" class="checkbox" onchange="subCheck()">
+      <font
+              color = "black" > <b >Subject
+        : </b></font >
+
+        <textarea
+                id = "title" class= "title1"
+                name = "title"
+        ></textarea>
+      <input type="checkbox"  value="keep" id="keepTitle" class="checkbox" onclick="titleCheck()">&nbsp;
+      <font
+              color = "black" > <b >Topic
+        : </b></font >
+        <textarea
+                id = "topic" class= "title1"
+                name = "topic"
+        ></textarea>
+    </div>
+    <textarea
+            placeholder = "."
+            id = "text"
+            name = "text"
+            rows = "4"
+            style = "overflow: hidden; word-wrap: break-word; resize: none; height: 160px; " > </textarea >
+
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;
+
+
+    <input type="checkbox" name="code" value="code" id="isCode" class="checkbox">&nbsp; <label style="font-size: large">code</label>
+
+    <input
+            id = "button"
+            type = "submit"
+            value = "Create" >
+  </div>
+         <textarea style="display:none;"
+                   id = "linkText"
+                   name = "linkText"
+         ></textarea>
+
+</form>
+
+</div>
+
+</body>
+</html>
