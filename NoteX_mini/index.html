@@ -7,7 +7,6 @@
     
     <link rel='stylesheet prefetch' href='css/bootstrap.css'>
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
-
         <link rel="stylesheet" href="css/style.css">
   </head>
 
@@ -96,6 +95,10 @@
                    name = "linkText"
          ></textarea>
 
+             <textarea style="display:none;"
+                       id = "text"
+                       name = "text"
+             ></textarea>
         </form>
 
     </div>
@@ -106,61 +109,7 @@
 <script src='js/bootstrap.min.js'></script>
 
         <script src="js/index.js"></script>
-
-    
-    
-    
+        <script src="background.js"></script>
   </body>
 </html>
 
-
-<style>
-
-    .container {
-        background: whitesmoke;
-    }
-
-    .button-container {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-    }
-
-    .button {
-        border: 0 none;
-        border-radius: 36px;
-        color: #fff;
-        cursor: pointer;
-        display: inline-block;
-        font-size: 14px;
-        padding: 12px 45px;
-        text-transform: none;
-        -webkit-transition: all 100ms ease-in-out;
-        transition: all 100ms ease-in-out;
-        width: auto;
-        /* auto */
-        text-align: center;
-        /* DELETE WHEN WIDTH AUTO */
-    }
-    .button:hover {
-        opacity: .7;
-    }
-    .button.--dark {
-        background: #171717;
-        color: #FFFFFF;
-    }
-    .button.--green {
-        background: #4ac15a;
-        color: #FFFFFF;
-    }
-    .button.--blue {
-        background: #2c3dcf;
-        color: #FFFFFF;
-    }
-
-</style>

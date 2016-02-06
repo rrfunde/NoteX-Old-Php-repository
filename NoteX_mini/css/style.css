@@ -165,3 +165,49 @@ input:focus ~ label, input:valid ~ label {
     color: #5264AE;
 }
 
+.container {
+    background: whitesmoke;
+}
+
+.button-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.button {
+    border: 0 none;
+    border-radius: 36px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 12px 45px;
+    text-transform: none;
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+    width: auto;
+    /* auto */
+    text-align: center;
+    /* DELETE WHEN WIDTH AUTO */
+}
+.button:hover {
+    opacity: .7;
+}
+.button.--dark {
+    background: #171717;
+    color: #FFFFFF;
+}
+.button.--green {
+    background: #4ac15a;
+    color: #FFFFFF;
+}
+.button.--blue {
+    background: #2c3dcf;
+    color: #FFFFFF;
+}
