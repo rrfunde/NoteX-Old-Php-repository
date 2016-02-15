@@ -16,7 +16,7 @@ $db->createCollection($subject);
 
 
 $solution="&nbsp;&nbsp;&nbsp;&nbsp;".str_replace("\\\"","\"",$solution);
-$solution=str_replace("-",":",$solution);
+//$solution=str_replace("-",":",$solution);
 if(isset($_POST['code']))
 {
     $solution="<pre><code>".$solution."</code></pre>";
@@ -24,15 +24,10 @@ if(isset($_POST['code']))
 $subject=strtolower($subject);
 $collection = $db->$subject;
 
-if($subject=="dictionary")
-{
-$document = array( "problem" => $problem, "solution" => $solution);
-}
-else
-{
-$document = array( "problem" => $problem, "solution" => $solution,"link"=>$link1 );	
-}
-		// add a record
+
+$document = array( "problem" => $problem, "solution" => $solution,"link"=>$link1 );
+
+// add a record
 //echo $document;
 
 $find1=array("problem"=> $problem);
@@ -62,6 +57,5 @@ else
 {
 $collection->insert($document);
 }
-//header("Location: http://localhost/NoteX_mini/popup.html");
 
 echo "saved";

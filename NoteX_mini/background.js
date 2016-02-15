@@ -67,13 +67,39 @@ var formFill = function(){
         for(var i = 0; i<length ;i++){
             if(title.indexOf(sub[i]) > -1){
                 subject = sub[i];
+                break;
             }
         }
         if(subject == "")
         subject = "other";
 
-        document.getElementById("title").value = subject;
-        document.getElementById("topic").value = title;
+
+        chrome.storage.local.get("Title", function (res) {
+
+            var titleSet = "";
+            if (res.Title == "")
+                titleSet = subject;
+            else {
+                titleSet = res.Title;
+                document.getElementById("keepTitle").checked = true;
+
+            }
+            document.getElementById("title").value = titleSet;
+        });
+        chrome.storage.local.get("Topic", function (res) {
+            var topicSet = "";
+
+            if (res.Topic == "")
+                topicSet = title;
+            else {
+                topicSet = res.Topic;
+                document.getElementById("keepTopic").checked = true;
+
+            }
+            document.getElementById("topic").value = topicSet;
+
+
+        });
         document.getElementById("linkText").innerHTML = url;
 
 
@@ -81,5 +107,47 @@ var formFill = function(){
     })
 };
 
+var copyInnerHtml = function () {
+
+    document.getElementById("text").innerHTML = document.getElementById("editor").innerHTML;
+};
 
 formFill();
+
+var ele = document.getElementById('form1');
+if (ele.addEventListener) {
+    ele.addEventListener("submit", copyInnerHtml, false);  //Modern browsers
+}
+
+document.getElementById("keepTopic").addEventListener("change", titleCheck);
+document.getElementById("keepTitle").addEventListener("change", subCheck);
+
+
+function subCheck() {
+
+
+    var c = document.getElementById("keepTitle").checked;
+
+    if (c == true) {
+
+        var obj1 = {};
+        obj1["Title"] = document.getElementById("title").value;
+        chrome.storage.local.set(obj1, function () {
+        })
+    }
+    else
+        chrome.storage.local.set({Title: ""}, function () {
+        })
+
+}
+function titleCheck() {
+    if (document.getElementById("keepTopic").checked) {
+        var obj = {};
+        obj["Topic"] = document.getElementById("topic").value;
+        chrome.storage.local.set(obj, function () {
+        })
+    }
+    else
+        chrome.storage.local.set({Topic: ""}, function () {
+        })
+}
