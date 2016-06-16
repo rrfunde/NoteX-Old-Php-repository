@@ -2,7 +2,7 @@
 <?php
 
 //$m = new MongoClient("mongodb://rrfunde:Jhearts128@ds063870.mongolab.com:63870/notex_mini");
-$m=new MongoClient("127.0.0.1");
+$m=new MongoDB\Driver\Manager("127.0.0.1");
 // $db = $m->notex_mini; // select a database
 
 $db=$m->selectDB("NoteX_mini");
